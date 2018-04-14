@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.github.yourarj'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def spring_boot_version='2.0.1.RELEASE'
+//specified version in gov examples
+//def apache_cxf_rt_version='3.0.5'
+def apache_cxf_rt_version='3.2.4'
+
+dependencies {
+    compile("org.apache.cxf:cxf-rt-frontend-jaxws:${apache_cxf_rt_version}")
+    compile("org.apache.cxf:cxf-rt-transports-http:${apache_cxf_rt_version}")
+    compile("org.apache.cxf:cxf-rt-transports-http-jetty:${apache_cxf_rt_version}")
+    compile("org.apache.cxf:cxf-rt-ws-policy:${apache_cxf_rt_version}")
+    compile("org.apache.cxf:cxf-rt-ws-security:${apache_cxf_rt_version}")
+
+
+
+
+    compile("org.springframework.boot:spring-boot-starter-web:${spring_boot_version}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

@@ -1,0 +1,3 @@
+app:
+  bulkitr:
+     wsdl_url: https://services.incometaxindiaefiling.gov.in/e-FilingSecWS/ditsecws/BulkItrService?wsdl
