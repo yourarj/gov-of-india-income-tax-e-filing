@@ -1,6 +1,7 @@
 package com.github.yourarj.e_filing.gov.return_status;
 
 import java.io.File;
+import java.math.BigInteger;
 import java.net.URL;
 
 import org.apache.cxf.Bus;
@@ -31,6 +32,10 @@ public final class ReturnStatusService_Client {
         try {
 
             ReturnStatusRequest ditRequest = new ReturnStatusRequest();
+            BigInteger BI = new BigInteger("2017");
+            ditRequest.setPan("BDBPC4051J");
+            ditRequest.setAssessmentYear(BI);
+            ditRequest.setUniqueRequestId("ERIA521499-235645");
             ReturnStatusResponse resp = port.getReturnStatus(ditRequest);
 
             System.out.println("Server responded with: " + resp);
